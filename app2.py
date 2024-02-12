@@ -36,7 +36,7 @@ def main():
     if page == "Welcome":
         welcome_page()
     elif page == "prototype":
-        login_page()
+        prototype()
     elif page == "model":
         model_start()
 
