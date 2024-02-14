@@ -37,14 +37,19 @@ def model_start():
         
              
 def main():
-    page = st.sidebar.radio("Navigation", ["Welcome", "prototype","model"])
+    page = st.sidebar.radio("Navigation", ["Welcome", "prototype","model","model2"])
 
     if page == "Welcome":
         welcome_page()
     elif page == "prototype":
         login_page()
     elif page == "model":
+        
         model_start()
+    elif page == "model2":
+        model2()
+     
+      
 
 if __name__ == "__main__":
     main()
