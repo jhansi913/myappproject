@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
- 
+
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 def welcome_page():
     st.title("Welcome to Machine learning world")
@@ -24,14 +26,11 @@ def prototype():
     st.image("prototype.jpg")
 
 def model_start():
-    uploaded_file = st.file_uploader("model.pkl")
-    if uploaded_file is not None:
-        clf2 = pickle.loads(uploaded_file.read())
     Temperature=st.text_input("Enter temp")
     Volume=st.text_input("enter volume")
     Pressure=st.text_input("enter pressure")
     Humidity=st.text_input("enter humidity")
-    power=make_prediction(clf2,Temperature,Volume,Pressure,Humidity)
+    power=make_prediction(model,Temperature,Volume,Pressure,Humidity)
     st.write(power)
     df=st.file_uploader('Upload a dataset here')
     data=pd.read_csv('power_test.csv')
