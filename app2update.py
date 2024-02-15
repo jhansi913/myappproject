@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import pickle
 
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+ model1= open('model.pkl', 'rb')
+model_final= pickle.load(model1)
 
 def welcome_page():
     st.title("Welcome to Machine learning world")
@@ -30,7 +30,7 @@ def model_start():
     Volume=st.text_input("enter volume")
     Pressure=st.text_input("enter pressure")
     Humidity=st.text_input("enter humidity")
-    power=make_prediction(model,Temperature,Volume,Pressure,Humidity)
+    power=make_prediction(model_final,Temperature,Volume,Pressure,Humidity)
     st.write(power)
     df=st.file_uploader('Upload a dataset here')
     data=pd.read_csv('power_test.csv')
