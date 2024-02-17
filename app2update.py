@@ -44,7 +44,7 @@ def model_start():
         
              
 def main():
-    page = st.sidebar.radio("Navigation", ["Welcome", "prototype","model","model22"])
+    page = st.sidebar.radio("Navigation", ["Welcome", "prototype","model"])
 
     if page == "Welcome":
         welcome_page()
@@ -52,8 +52,7 @@ def main():
         prototype()
     elif page == "model":
         model_start()
-    elif page == "model22":
-        model2()
+     
      
       
 
