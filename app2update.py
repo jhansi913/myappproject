@@ -3,8 +3,10 @@ import pandas as pd
 import numpy as np
 import pickle
 
-model1= open('model.pkl', 'rb')
-model_final= pickle.load(model1)
+def load_model(model_path):
+    with open(model_path, 'rb') as model_file:
+        model = pickle.load(model_file)
+    return model
 
 def welcome_page():
     st.title("Welcome to Machine learning world")
@@ -15,10 +17,10 @@ def welcome_page():
         
         
          
-def make_prediction(model, Temperature,Volume,Pressure,Humidity):
-    input_data = [[Temperature,Volume,Pressure,Humidity]]
-    prediction = model.predict(input_data)
-    return prediction
+def predict_power(model, temp, hum, press, volume):
+    input_features = [[temp, hum, press, volume]]
+    power = model.predict(input_features)[0]
+    return power
 
 
 def prototype():
@@ -26,12 +28,13 @@ def prototype():
     st.image("prototype.jpg")
 
 def model_start():
-    Temperature=st.text_input("Enter temp")
-    Volume=st.text_input("enter volume")
-    Pressure=st.text_input("enter pressure")
-    Humidity=st.text_input("enter humidity")
-    power=make_prediction(model_final,Temperature,Volume,Pressure,Humidity)
-    st.write(power)
+     temp = st.number_input("Enter temperature:", min_value=0.0, step=0.1)
+     hum = st.number_input("Enter humidity:", min_value=0.0, step=0.1)
+     press = st.number_input("Enter pressure:", min_value=0.0, step=0.1)
+     volume = st.number_input("Enter volume:", min_value=0.0, step=0.1)
+     if st.button("Predict Power"):
+         power = predict_power(model, temp, hum, press, volume)
+         st.success(f"Predicted power: {power}")
     df=st.file_uploader('Upload a dataset here')
     data=pd.read_csv('power_test.csv')
     st.line_chart(data) 
