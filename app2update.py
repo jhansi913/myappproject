@@ -28,6 +28,8 @@ def prototype():
     st.image("prototype.jpg")
 
 def model_start():
+    model_path = "model.pkl"
+    model = load_model(model_path)
     temp = st.number_input("Enter temperature:", min_value=0.0, step=0.1)
     hum = st.number_input("Enter humidity:", min_value=0.0, step=0.1)
     press = st.number_input("Enter pressure:", min_value=0.0, step=0.1)
