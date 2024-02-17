@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 def load_model(model_path):
-    with open(model_path, 'rb') as model_file:
+    with open(model_path, 'rb') as model_file:  
         model = pickle.load(model_file)
     return model
 
@@ -28,13 +28,13 @@ def prototype():
     st.image("prototype.jpg")
 
 def model_start():
-     temp = st.number_input("Enter temperature:", min_value=0.0, step=0.1)
-     hum = st.number_input("Enter humidity:", min_value=0.0, step=0.1)
-     press = st.number_input("Enter pressure:", min_value=0.0, step=0.1)
-     volume = st.number_input("Enter volume:", min_value=0.0, step=0.1)
-     if st.button("Predict Power"):
-         power = predict_power(model, temp, hum, press, volume)
-         st.success(f"Predicted power: {power}")
+    temp = st.number_input("Enter temperature:", min_value=0.0, step=0.1)
+    hum = st.number_input("Enter humidity:", min_value=0.0, step=0.1)
+    press = st.number_input("Enter pressure:", min_value=0.0, step=0.1)
+    volume = st.number_input("Enter volume:", min_value=0.0, step=0.1)
+    if st.button("Predict Power"):
+        power = predict_power(model, temp, hum, press, volume)
+        st.success(f"Predicted power: {power}")
     df=st.file_uploader('Upload a dataset here')
     data=pd.read_csv('power_test.csv')
     st.line_chart(data) 
