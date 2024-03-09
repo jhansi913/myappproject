@@ -1,33 +1,40 @@
-import streamlit as st
+ import streamlit as st
 
-# Page 1 content
-def page1():
-    st.title("Page 1")
-    st.write("This is page 1")
-    if st.button("Go to Page 2"):
-        page = "page2"
+# Function to simulate user authentication
+def authenticate(username, password):
+    # Replace this with your actual authentication logic
+    valid_username = "user"
+    valid_password = "password"
+    if username == valid_username and password == valid_password:
+        return True
     else:
-        page = "page1"
-    return page
+        return False
 
-# Page 2 content
-def page2():
-    st.title("Page 2")
-    st.write("This is page 2")
-    if st.button("Go back to Page 1"):
-        page = "page1"
-    else:
-        page = "page2"
-    return page
+# Login page
+def login():
+    st.title("Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if authenticate(username, password):
+            st.success("Login successful!")
+            return True
+        else:
+            st.error("Invalid username or password")
+            return False
+
+# Page to view results
+def view_results():
+    st.title("Results")
+    st.write("Welcome to the results page!")
+    # Display your results here
 
 # Main function
 def main():
-    page = "page1"
-    while True:
-        if page == "page1":
-            page = page1()
-        elif page == "page2":
-            page = page2()
+    if login():
+        if st.button("Register"):
+            view_results()
 
 if __name__ == "__main__":
     main()
+
