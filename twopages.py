@@ -32,8 +32,8 @@ def view_results():
 # Main function
 def main():
     if login():
-        if st.button("Register"):
-            view_results()
+         view_results()
+            
 
 if __name__ == "__main__":
     main()
