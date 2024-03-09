@@ -30,9 +30,13 @@ def view_results():
     # Display your results here
 
 # Main function
-def main():
-    if login():
-         view_results()
+ def main():
+    if not login():
+        # If login is unsuccessful, display login page
+        login()
+
+    view_results()
+
             
 
 if __name__ == "__main__":
