@@ -1,4 +1,4 @@
- import streamlit as st
+import streamlit as st
 
 # Function to simulate user authentication
 def authenticate(username, password):
