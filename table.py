@@ -1,8 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-# Sample data
-data = pd.read_csv("your_data.csv")  # Assuming you have your data in a CSV file
+ # Assuming you have your data in a CSV file
 
 # Function to calculate pass percentage
 def calculate_pass_percentage(passed, failed):
