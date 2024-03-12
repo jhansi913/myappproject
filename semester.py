@@ -37,7 +37,7 @@ selected_department = st.selectbox('Select a department', departments)
 
 # Display the dropdowns
 if selected_semester=='1-2' and selected_department:
-    data = pd.read_excel('/content/22-Res12.xlsx')
+    data = pd.read_excel('22-Res12.xlsx')
     data.dropna(subset=['BRANCH'], inplace=True)
  
     selected_subject = st.selectbox('Select a subject', list(grades_data[selected_semester][selected_department].keys()))
