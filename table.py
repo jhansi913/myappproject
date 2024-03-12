@@ -41,7 +41,7 @@ def count_failed(BRANCH):
     return countf
 
 def generate_table_data():
-    passed[]
+    passed=[]
     failed=[]
     table_data = []
     departments = ['CSE', 'ECE', 'IT' , 'EEE','CSM']
