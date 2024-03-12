@@ -1,7 +1,8 @@
 import pandas as pd
 import streamlit as st
 
- # Assuming you have your data in a CSV file
+# Sample data
+data = pd.read_csv("C:\Users\jhans\Downloads\22-Res12.xlsx")  # Assuming you have your data in a CSV file
 
 # Function to calculate pass percentage
 def calculate_pass_percentage(passed, failed):
@@ -11,18 +12,48 @@ def calculate_pass_percentage(passed, failed):
     else:
         return (passed / total) * 100
 
-# Function to generate data for the table
+
+def count_passed(BRANCH):
+    j=BRANCH
+    sub_list_CIM= ['MATHEMATICS-II(1)', 'PHYSICS(2)', 'ELEMENTS OF ELECTRONICS ENGINEERING(3)' , 'DATA STRUCTURES USING C(4)','DIGITAL LOGIC DESIGN(5)','LINUX ADMINISTRATION LAB(6)','PHYSICS LAB(7)','DATA STRUCTURES LAB(8)']
+    sub_list_EEE=['MATHEMATICS-II(1)','GREEN CHEMISTRY(2)','ENGLISH(3)','COMPUTER PROGRAMMING AND NUMERICAL METHODS(4)','ELECTRONIC CIRCUIT ANALYSIS(5)','ENGLISH LANGUAGE LAB(6)','ELECTRONIC CIRCUIT ANALYSIS LAB(7)', 'COMPUTER PROGRAMMING AND NUMERICAL METHODS LAB(8)']
+    countp =[]
+    if j=='CSE' or j=='IT' or j=='CSM':
+        for i in sub_list_CIM:
+            countp.append(data[(data['BRANCH'] == j) & (data[i] != 'F')].shape[0])
+    elif j=='EEE' or j=='ECE':
+        for i in sub_list_EEE:
+            countp.append(data[(data['BRANCH'] == j) & (data[i] != 'F')].shape[0])
+    return countp
+
+
+def count_failed(BRANCH):
+    j=BRANCH
+    sub_list_CIM= ['MATHEMATICS-II(1)', 'PHYSICS(2)', 'ELEMENTS OF ELECTRONICS ENGINEERING(3)' , 'DATA STRUCTURES USING C(4)','DIGITAL LOGIC DESIGN(5)','LINUX ADMINISTRATION LAB(6)','PHYSICS LAB(7)','DATA STRUCTURES LAB(8)']
+    sub_list_EEE=['MATHEMATICS-II(1)','GREEN CHEMISTRY(2)','ENGLISH(3)','COMPUTER PROGRAMMING AND NUMERICAL METHODS(4)','ELECTRONIC CIRCUIT ANALYSIS(5)','ENGLISH LANGUAGE LAB(6)','ELECTRONIC CIRCUIT ANALYSIS LAB(7)', 'COMPUTER PROGRAMMING AND NUMERICAL METHODS LAB(8)']
+    countf = []
+    if j=='CSE' or j=='IT' or j=='CSM':
+        for i in sub_list_CIM:
+            countf.append(data[(data['BRANCH'] == j) & (data[i] == 'F')].shape[0])
+    elif j=='EEE' or j=='ECE':
+        for i in sub_list_EEE:
+            countf.append(data[(data['BRANCH'] == j) & (data[i] == 'F')].shape[0])
+    return countf
+
 def generate_table_data():
+    passed[]
+    failed=[]
     table_data = []
-    for index, row in data.iterrows():
-        subject_code = row['Subject_Code']
-        subject_name = row['Subject_Name']
-        registered = row['Registered']
-        passed = row['Passed']
-        failed = row['Failed']
-        pass_percentage = calculate_pass_percentage(passed, failed)
-        table_data.append({
-            'S.No': index + 1,
+    departments = ['CSE', 'ECE', 'IT' , 'EEE','CSM']
+    subject_code=[]
+     
+    subject_name=['MATHEMATICS-II(1)', 'PHYSICS(2)', 'ELEMENTS OF ELECTRONICS ENGINEERING(3)' , 'DATA STRUCTURES USING C(4)','DIGITAL LOGIC DESIGN(5)','LINUX ADMINISTRATION LAB(6)','PHYSICS LAB(7)','DATA STRUCTURES LAB(8)']
+    selected_department = st.selectbox('Select a department', departments)
+    registered=data[(data['BRANCH'] == selected_department)].shape[0]
+    passed = count_passed(selected_department)
+    faied = count_failed(selected_department)
+    pass_percentage = calculate_pass_percentage(passed, failed)
+    table_data.append({
             'Subject Code': subject_code,
             'Subject Name': subject_name,
             'Registered': registered,
@@ -31,6 +62,16 @@ def generate_table_data():
             'Pass Percentage': pass_percentage
         })
     return table_data
+ 
+
+ 
+ 
+
+       
+      
+       
+
+ 
 
 # Main function
 def main():
