@@ -1,6 +1,7 @@
 import pandas as pd
+import streamlit as st
 # read the dataset
-data = pd.read_excel('22-Res12.xlsx')
+data = pd.read_csv('22-Res12.xlsx')
 data.dropna(subset=['BRANCH'], inplace=True)
 df=data[data['BRANCH'] == selected_dept]
 df = df.dropna(axis=1, how='all')
