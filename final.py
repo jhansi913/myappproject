@@ -4,22 +4,22 @@ import streamlit as st
  
 
 def count_failed(selected_dept):
-    passed=[]
-    failed=[]
+    passed=12
+    failed=34
      
-    for i in range(3,11):
-        passed.append(df[(df[df.columns[i]] != 'F')].shape[0])
-        failed.append(df[(df[df.columns[i]] == 'F')].shape[0])
+    #for i in range(3,11):
+        #passed.append(df[(df[df.columns[i]] != 'F')].shape[0])
+        #failed.append(df[(df[df.columns[i]] == 'F')].shape[0])
     return passed,failed
 
 
 def generate_table_data():
-    dept_list=data['BRANCH'].unique()
+    dept_list=['CSE','IT','CSM','EEE','ECE']
     selected_dept = st.selectbox('Select a department', dept_list)
     passed,failed=count_failed(selected_dept)
     sub_list=[]
-    for i in range(3,11):
-        sub_list.append(df.columns[i])
+    #for i in range(3,11):
+        #sub_list.append(df.columns[i])
     table_data = []
     table_data.append({
               
@@ -34,10 +34,10 @@ def generate_table_data():
 # Main function
 def main():
     st.title("Subject Statistics")
-    data = pd.read_csv('22-Res12')
-    data.dropna(subset=['BRANCH'], inplace=True)
-    df=data[data['BRANCH'] == selected_dept]
-    df = df.dropna(axis=1, how='all')
+    #data = pd.read_csv('22-Res12')
+    #data.dropna(subset=['BRANCH'], inplace=True)
+    #df=data[data['BRANCH'] == selected_dept]
+    #df = df.dropna(axis=1, how='all')
 
     # Generate table data
     table_data = generate_table_data()
