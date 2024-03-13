@@ -1,10 +1,7 @@
 import pandas as pd
 import streamlit as st
 # read the dataset
-data = pd.read_csv('22-Res12.xlsx')
-data.dropna(subset=['BRANCH'], inplace=True)
-df=data[data['BRANCH'] == selected_dept]
-df = df.dropna(axis=1, how='all')
+ 
 
 def count_failed(selected_dept):
     passed=[]
@@ -37,6 +34,10 @@ def generate_table_data():
 # Main function
 def main():
     st.title("Subject Statistics")
+    data = pd.read_csv('22-Res12.xlsx')
+    data.dropna(subset=['BRANCH'], inplace=True)
+    df=data[data['BRANCH'] == selected_dept]
+    df = df.dropna(axis=1, how='all')
 
     # Generate table data
     table_data = generate_table_data()
