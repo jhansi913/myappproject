@@ -7,7 +7,7 @@ data.dropna(subset=['BRANCH'], inplace=True)
 dept_list=['CSE','IT','CSM','EEE','ECE']
 selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
 df=data[data["BRANCH"]==selected_dept]
-df=data.dropna(axis=1, how='all')
+df=df.dropna(axis=1, how='all')
  
 
  
