@@ -5,8 +5,8 @@ import numpy as np
  
 
 def count_failed(selected_dept):
-    passed=12
-    failed=34
+    passed=[]
+    failed=[]
      
     for i in range(3,11):
         passed.append(df[(df[df.columns[i]] != 'F')].shape[0])
