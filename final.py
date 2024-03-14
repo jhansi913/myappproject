@@ -42,7 +42,7 @@ def generate_table_data():
   data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count})
      
 
-    return data
+ return data
  
 
 # Main function
