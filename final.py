@@ -38,7 +38,7 @@ def generate_table_data():
     })
  
  data = []
- for name, pass_count, fail_count in zip(subject_names, passed, failed):
+ for name, pass_count, fail_count in zip(sub_list, passed, failed):
   data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count})
      
 
