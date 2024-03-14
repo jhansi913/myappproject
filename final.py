@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 # read the dataset
 data = pd.read_excel('22-Res11.xlsx')
-df=data.dropna(subset=['BRANCH'], inplace=True)
+data.dropna(subset=['BRANCH'], inplace=True)
 df=df.dropna(axis=1, how='all')
 
  
