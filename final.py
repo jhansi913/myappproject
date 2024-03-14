@@ -53,7 +53,7 @@ def main():
     table_data = generate_table_data()
 
     # Display the table
-    st.table(pd.DataFrame(table_data))
+    st.DataFrame(pd.DataFrame(table_data))
 
 if __name__ == "__main__":
     main()
