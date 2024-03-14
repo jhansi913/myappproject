@@ -36,6 +36,8 @@ def generate_table_data():
 def main():
     st.title("Subject Statistics")
     data = pd.ExcelFile('22-Res11.xlsx')
+    data.to_csv ("ResultCsvFile.csv", index = None, header=True)
+ 
     data.dropna(subset=['BRANCH'], inplace=True)
     df=data[data['BRANCH'] == selected_dept]
     df = df.dropna(axis=1, how='all')
