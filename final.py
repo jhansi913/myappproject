@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 # read the dataset
 sem_list=['1-1','1-2']
-semester= st.selectbox("Select semester", dept_list, key="selectbox11")
+semester= st.selectbox("Select semester", sem_list, key="selectbox11")
 if semester=='1-1':
  data = pd.read_excel('22-Res11.xlsx')
 if semester=='1-2':
