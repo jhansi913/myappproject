@@ -23,24 +23,23 @@ def count_failed(selected_dept):
 
 
 def generate_table_data():
-     
-     
-
-    passed,failed=count_failed(selected_dept)
-    sub_list=[]
-    for i in range(3,11):
-        sub_list.append(df.columns[i])
-    table_data = []
-    table_data.append({
+ passed,failed=count_failed(selected_dept)
+ sub_list=[]
+ for i in range(3,11):
+  sub_list.append(df.columns[i])
+  
+ table_data = []
+ table_data.append({
               
             'Subject Name': sub_list,
             'Passed': passed,
             'Failed': failed,
              
     })
-   data = []
-   for name, pass_count, fail_count in zip(subject_names, passed, failed):
-    data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count})
+ 
+ data = []
+ for name, pass_count, fail_count in zip(subject_names, passed, failed):
+  data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count})
      
 
     return data
