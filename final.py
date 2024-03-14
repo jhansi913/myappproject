@@ -16,7 +16,8 @@ def count_failed(selected_dept):
 
 def generate_table_data():
     dept_list=['CSE','IT','CSM','EEE','ECE']
-    selected_dept = st.selectbox(key="selectbox1", dept_list)
+    selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+
     passed,failed=count_failed(selected_dept)
     sub_list=[]
     for i in range(3,11):
@@ -40,7 +41,8 @@ def main():
  
     data.dropna(subset=['BRANCH'], inplace=True)
     dept_list=['CSE','IT','CSM','EEE','ECE']
-    selected_dept = st.selectbox(key="selectbox1", dept_list)
+    selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+
     df=data[data['BRANCH'] == selected_dept]
     df = df.dropna(axis=1, how='all')
 
