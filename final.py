@@ -2,7 +2,13 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 # read the dataset
-data = pd.read_excel('22-Res11.xlsx')
+sem_list=['1-1','1-2']
+semester= st.selectbox("Select semester", dept_list, key="selectbox11")
+if semester=='1-1':
+ data = pd.read_excel('22-Res11.xlsx')
+if semester=='1-2':
+ data = pd.read_excel('22-Res12.xlsx')
+ 
 data.dropna(subset=['BRANCH'], inplace=True)
 dept_list=['CSE','IT','CSM','EEE','ECE']
 selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
