@@ -2,6 +2,11 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 # read the dataset
+data = pd.read_excel('22-Res11.xlsx')
+data.dropna(subset=['BRANCH'], inplace=True)
+dept_list=['CSE','IT','CSM','EEE','ECE']
+df = df.dropna(axis=1, how='all')
+
  
 
 def count_failed(selected_dept):
@@ -15,7 +20,7 @@ def count_failed(selected_dept):
 
 
 def generate_table_data():
-    dept_list=['CSE','IT','CSM','EEE','ECE']
+     
     selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
 
     passed,failed=count_failed(selected_dept)
@@ -36,15 +41,10 @@ def generate_table_data():
 # Main function
 def main():
     st.title("Subject Statistics")
-    data = pd.read_excel('22-Res11.xlsx')
+     
      
  
-    data.dropna(subset=['BRANCH'], inplace=True)
-    dept_list=['CSE','IT','CSM','EEE','ECE']
-    selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1q")
-
-    df=data[data['BRANCH'] == selected_dept]
-    df = df.dropna(axis=1, how='all')
+    
 
     # Generate table data
     table_data = generate_table_data()
