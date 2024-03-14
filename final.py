@@ -5,6 +5,7 @@ import numpy as np
 data = pd.read_excel('22-Res11.xlsx')
 data.dropna(subset=['BRANCH'], inplace=False)
 df=data.dropna(axis=1, how='all')
+dept_list=['CSE','IT','CSM','EEE','ECE']
 
  
 
