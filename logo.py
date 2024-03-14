@@ -3,7 +3,7 @@ st.set_page_config(layout="wide")
 # Custom HTML/CSS for the banner
 custom_html = """
 <div class="banner">
-    <img src="https://img.freepik.com/premium-photo/wide-banner-with-many-random-square-hexagons-charcoal-dark-black-color_105589-1820.jpg" alt="Banner Image">
+    <img src="https://www.google.co.in/url?sa=i&url=https%3A%2F%2Fwww.shiksha.com%2Fcollege%2Fgayatri-vidya-parishad-college-of-engineering-for-women-visakhapatnam-46521&psig=AOvVaw2CRCtiJMD7sthv3TAp2yCQ&ust=1710517637640000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMCqyvSM9IQDFQAAAAAdAAAAABAE" alt="Banner Image">
 </div>
 <style>
     .banner {
