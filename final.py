@@ -35,7 +35,7 @@ def generate_table_data():
 # Main function
 def main():
     st.title("Subject Statistics")
-    data = pd.ExcelFile('22-Res11.xlsx')
+    data = pd.read_excel('22-Res11.xlsx')
      
  
     data.dropna(subset=['BRANCH'], inplace=True)
