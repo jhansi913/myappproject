@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 # read the dataset
 data = pd.read_excel('22-Res11.xlsx')
-data.dropna(subset=['BRANCH'], inplace=True)
+df=data.dropna(subset=['BRANCH'], inplace=True)
 dept_list=['CSE','IT','CSM','EEE','ECE']
 df = df.dropna(axis=1, how='all')
 
