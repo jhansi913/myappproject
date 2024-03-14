@@ -41,7 +41,7 @@ def main():
  
     data.dropna(subset=['BRANCH'], inplace=True)
     dept_list=['CSE','IT','CSM','EEE','ECE']
-    selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+    selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1q")
 
     df=data[data['BRANCH'] == selected_dept]
     df = df.dropna(axis=1, how='all')
