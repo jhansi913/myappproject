@@ -34,7 +34,7 @@ def grades_count():
                 'P': df[df[selected_subject] == 'P'].shape[0]
         }
         grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
-        st.write(f"Grades count for {selected_subject} in {selected_department} department:")
+        st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
         st.table(grades_counts_df)
 
 
