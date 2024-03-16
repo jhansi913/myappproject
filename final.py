@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+st.tittle("GVPCEW SEMESTER STASTICS")
 # read the dataset
 sem_list=['1-1','1-2']
 semester= st.selectbox("Select semester", sem_list, key="selectbox11")
