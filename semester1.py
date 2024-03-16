@@ -9,14 +9,16 @@ if semester=='1-1':
  data = pd.read_excel('22-Res11.xlsx')
 if semester=='1-2':
  data = pd.read_excel('22-Res12.xlsx')
+
+dept_list=['CSE','IT','CSM','EEE','ECE']
+selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+
  
 data.dropna(subset=['BRANCH'], inplace=True)
 df=data[data["BRANCH"]==selected_dept]
 df=df.dropna(axis=1, how='all')
 
-dept_list=['CSE','IT','CSM','EEE','ECE']
-selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
-
+ 
 
 subjects=df.columns[3:11]
 selected_subject = st.selectbox('Select a subject', subjects)
