@@ -1,7 +1,8 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-st.tittle("GVPCEW SEMESTER STASTICS")
+st.header('This is a header with a divider', divider='rainbow')
+st.header('_Streamlit_ is :blue[cool] :sunglasses:')
 # read the dataset
 sem_list=['1-1','1-2']
 semester= st.selectbox("Select semester", sem_list, key="selectbox11")
