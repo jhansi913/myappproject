@@ -18,7 +18,7 @@ df=df.dropna(axis=1, how='all')
 def total_list():
  tpassed=df[(df['SGPA'] != 0) & (df['BRANCH'] == selected_dept)].shape[0]
  tfailed=df[(df['SGPA'] == 0) & (df['BRANCH'] == selected_dept)].shape[0]
- passpercentage=(tpassed/(tpassed+tfailed))*100;
+ tpasspercentage=(tpassed/(tpassed+tfailed))*100;
  table_data1 = []
  table_data1.append({"department": selected_dept, "Passed": tpassed, "Failed": tfailed,"passpercentage":tpasspercentage})
  
