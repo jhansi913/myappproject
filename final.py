@@ -59,8 +59,9 @@ def generate_table_data():
 # Main function
 def main():
  
- 
-    st.title("Department Pass/Fail Summary")
+    st.title("Result stastics")
+    st.subheader("Department Pass/Fail Summary")
+     
     
     table_data1=total_list()
     st.dataframe(pd.DataFrame(table_data1))
@@ -70,7 +71,7 @@ def main():
      
  
     
-
+    st.subheader("Subject Pass/Fail Summary")
     # Generate table data
     table_data = generate_table_data()
 
