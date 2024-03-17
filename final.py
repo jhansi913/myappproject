@@ -29,14 +29,14 @@ def total_list():
 
 # Equal aspect ratio ensures that pie is drawn as a circle.
  ax.axis('equal')
- plt.figure(figsize=(10,10))
+  
 
 # Adding a title
  plt.title('Pass/Fail/Total Strength Pie Chart')
 
 # Showing the plot in Streamlit
  st.write("Pie Chart:")
- st.pyplot(fig)
+ st.pyplot(fig,width=1,height=1)
  
 
  return table_data1
