@@ -37,8 +37,8 @@ def total_list():
 # Showing the plot in Streamlit
  st.write("Pie Chart:")
   
- st.pyplot(width=4, height=4)
- st.pyplot(fig)
+ st.pyplot(fig,width=4, height=4)
+  
  
 
  return table_data1
