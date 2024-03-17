@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import matplotlib.pyplot as plt
 st.title("GVCEW RESULTS DASHBOARD")
 # read the dataset
 sem_list=['1-1','1-2']
