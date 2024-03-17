@@ -37,7 +37,7 @@ def grades_count():
  grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
  st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
  st.table(grades_counts_df)
- plt.bar(grades_count_df['Grade'], grades_count_df['Count'])
+ plt.bar(grades_counts_df['Grade'], grades_counts_df['Count'])
 
 # Adding labels and title
  plt.xlabel('Grades')
