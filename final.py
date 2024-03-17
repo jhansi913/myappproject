@@ -21,6 +21,19 @@ def total_list():
  tpasspercentage=(tpassed/(tpassed+tfailed))*100;
  table_data1 = []
  table_data1.append({"Department": selected_dept, "TotalPassed": tpassed, "TotalFailed": tfailed,"pass%":tpasspercentage})
+ total_strength=tpassed+tfailed
+ fig, ax = plt.subplots()
+ ax.pie([passed, failed, total_strength], labels=['Passed', 'Failed', 'Total Strength'], autopct='%1.1f%%', startangle=90)
+
+# Equal aspect ratio ensures that pie is drawn as a circle.
+ ax.axis('equal')
+
+# Adding a title
+ plt.title('Pass/Fail/Total Strength Pie Chart')
+
+# Showing the plot in Streamlit
+ st.write("Pie Chart:")
+ st.pyplot(fig)
  
 
  return table_data1
