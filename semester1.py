@@ -39,7 +39,7 @@ def grades_count():
  st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
  st.table(grades_counts_df)
  fig, ax = plt.subplots()
- plt.pie([tpassed, tfailed, total_strength], labels=['Passed', 'Failed', 'Total Strength'], autopct='%1.1f%%', startangle=90)
+ plt.pie([grades_counts], labels=['O','A+','A','B+','B','C','P'], autopct='%1.1f%%', startangle=90)
 
 # Equal aspect ratio ensures that pie is drawn as a circle.
  plt.axis('equal')
