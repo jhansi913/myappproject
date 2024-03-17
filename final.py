@@ -23,12 +23,13 @@ def total_list():
  table_data1 = []
  table_data1.append({"Department": selected_dept, "TotalPassed": tpassed, "TotalFailed": tfailed,"pass%":tpasspercentage})
  total_strength=tpassed+tfailed
- plt.figure(figsize=(4,4))
+ 
  fig, ax = plt.subplots()
  ax.pie([tpassed, tfailed, total_strength], labels=['Passed', 'Failed', 'Total Strength'], autopct='%1.1f%%', startangle=90)
 
 # Equal aspect ratio ensures that pie is drawn as a circle.
  ax.axis('equal')
+ plt.figure(figsize=(4,4))
 
 # Adding a title
  plt.title('Pass/Fail/Total Strength Pie Chart')
