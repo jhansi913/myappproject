@@ -29,7 +29,7 @@ def total_list():
 
 # Equal aspect ratio ensures that pie is drawn as a circle.
  ax.axis('equal')
- plt.figure(figsize=(1,1))
+ plt.figure(figsize=(0.1,0.1))
 
 # Adding a title
  plt.title('Pass/Fail/Total Strength Pie Chart')
