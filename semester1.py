@@ -31,7 +31,7 @@ def grades_count():
                 'A': df[df[selected_subject] == 'A'].shape[0],
                 'B+': df[df[selected_subject] == 'B+'].shape[0],
                 'B': df[df[selected_subject] == 'B'].shape[0],
-                'c':df[df[selected_subject]=='c'].shape[0],
+                'C':df[df[selected_subject]=='C'].shape[0],
                 'P': df[df[selected_subject] == 'P'].shape[0]
         }
         grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
