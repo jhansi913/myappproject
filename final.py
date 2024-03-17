@@ -48,6 +48,20 @@ def generate_table_data():
  for name, pass_count, fail_count in zip(sub_list, passed, failed):
   passpercentage=(pass_count/(pass_count+fail_count))*100;
   data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count,"passpercentage":passpercentage})
+fig, ax = plt.subplots()
+ax.pie(passed, labels=["Passed"] * len(passed), autopct='%1.1f%%', startangle=90)
+ax.pie(passed+1, labels=["Passed"] * len(passed+failed), autopct='%1.1f%%', startangle=90)
+ax.pie(failed, labels=["Failed"] * len(failed), autopct='%1.1f%%', startangle=90, colors=['red'])
+
+# Equal aspect ratio ensures that pie is drawn as a circle.
+ax.axis('equal')
+
+# Adding a title
+plt.title('Pass/Fail Ratio by Subject')
+
+# Showing the plot in Streamlit
+st.write("Pie Chart:")
+st.pyplot(fig)
      
 
  return data
