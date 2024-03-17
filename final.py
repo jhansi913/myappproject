@@ -63,8 +63,7 @@ plt.title('Pass/Fail Ratio by Subject')
 st.write("Pie Chart:")
 st.pyplot(fig)
      
-
- return data
+return data
  
 
 # Main function
