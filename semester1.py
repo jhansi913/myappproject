@@ -37,22 +37,16 @@ def grades_count():
  grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
  st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
  st.table(grades_counts_df)
- fig, ax = plt.subplots()
- plt.pie([grades_counts], labels=['O','A+','A','B+','B','C','P'], autopct='%1.1f%%', startangle=90)
+ plt.bar(grades_count_df['Grade'], grades_count_df['Count'])
 
-# Equal aspect ratio ensures that pie is drawn as a circle.
- plt.axis('equal')
-  
-
-# Adding a title
- plt.title('Pass/Fail/Total Strength Pie Chart')
+# Adding labels and title
+ plt.xlabel('Grades')
+ plt.ylabel('Count')
+ plt.title('Grade Distribution')
 
 # Showing the plot in Streamlit
- st.write("Pie Chart:")
-  
- st.pyplot(fig)
-
-
+ st.write("Bar Chart:")
+ st.pyplot()
 
 
 def main():
