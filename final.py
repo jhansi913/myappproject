@@ -20,7 +20,7 @@ def total_list():
  tfailed=df[(df['SGPA'] == 0) & (df['BRANCH'] == selected_dept)].shape[0]
  tpasspercentage=(tpassed/(tpassed+tfailed))*100;
  table_data1 = []
- table_data1.append({"department": selected_dept, "Passed": tpassed, "Failed": tfailed,"passpercentage":tpasspercentage})
+ table_data1.append({"Department": selected_dept, "TotalPassed": tpassed, "TotalFailed": tfailed,"pass%":tpasspercentage})
  
 
  return table_data1
@@ -50,7 +50,7 @@ def generate_table_data():
  data = []
  for name, pass_count, fail_count in zip(sub_list, passed, failed):
   passpercentage=(pass_count/(pass_count+fail_count))*100;
-  data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count,"passpercentage":passpercentage})
+  data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count,"Pass%":passpercentage})
  
      
  return data
