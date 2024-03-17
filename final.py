@@ -25,10 +25,10 @@ def total_list():
  total_strength=tpassed+tfailed
  
  fig, ax = plt.subplots()
- ax.pie([tpassed, tfailed, total_strength], labels=['Passed', 'Failed', 'Total Strength'], autopct='%1.1f%%', startangle=90)
+ plt.pie([tpassed, tfailed, total_strength], labels=['Passed', 'Failed', 'Total Strength'], autopct='%1.1f%%', startangle=90)
 
 # Equal aspect ratio ensures that pie is drawn as a circle.
- ax.axis('equal')
+ plt.axis('equal')
   
 
 # Adding a title
@@ -36,7 +36,7 @@ def total_list():
 
 # Showing the plot in Streamlit
  st.write("Pie Chart:")
- st.pyplot(fig,width=1,height=1)
+ st.pyplot(fig)
  
 
  return table_data1
