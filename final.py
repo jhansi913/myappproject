@@ -59,7 +59,7 @@ def generate_table_data():
 # Main function
 def main():
  
-    st.title("Result stastics")
+    st.title("Result Statistics")
     st.subheader("Department Pass/Fail Summary")
      
     
