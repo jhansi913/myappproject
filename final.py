@@ -21,8 +21,9 @@ def total_list():
  passpercentage=(tpassed/(tpassed+tfailed))*100;
  table_data1 = []
  table_data1.append({"department": selected_dept, "Passed": tpassed, "Failed": tfailed,"passpercentage":tpasspercentage})
+ 
 
-return table_data1
+ return table_data1
  
  
    
