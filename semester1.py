@@ -24,10 +24,7 @@ subjects=df.columns[3:11]
 selected_subject = st.selectbox('Select a subject', subjects)
 
 def grades_count():
- 
- 
-        
-        grades_counts = {
+ grades_counts = {
                 'O': df[df[selected_subject] == 'O'].shape[0],
                 'A+': df[df[selected_subject] == 'A+'].shape[0],
                 'A': df[df[selected_subject] == 'A'].shape[0],
@@ -36,23 +33,23 @@ def grades_count():
                 'C':df[df[selected_subject]=='C'].shape[0],
                 'P': df[df[selected_subject] == 'P'].shape[0]
         }
-      grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
-      st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
-      st.table(grades_counts_df)
-      fig, ax = plt.subplots()
-      plt.pie([grades_counts], labels=['O','A+','A','B+','B','C','P'], autopct='%1.1f%%', startangle=90)
+ grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
+ st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
+ st.table(grades_counts_df)
+ fig, ax = plt.subplots()
+ plt.pie([grades_counts], labels=['O','A+','A','B+','B','C','P'], autopct='%1.1f%%', startangle=90)
 
 # Equal aspect ratio ensures that pie is drawn as a circle.
-      plt.axis('equal')
+ plt.axis('equal')
   
 
 # Adding a title
-     plt.title('Pass/Fail/Total Strength Pie Chart')
+ plt.title('Pass/Fail/Total Strength Pie Chart')
 
 # Showing the plot in Streamlit
-    st.write("Pie Chart:")
+ st.write("Pie Chart:")
   
-   st.pyplot(fig)
+ st.pyplot(fig)
 
 
 
