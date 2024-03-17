@@ -35,8 +35,7 @@ def grades_count():
                 'P': df[df[selected_subject] == 'P'].shape[0]
         }
  grades_counts_df = pd.DataFrame(list(grades_counts.items()), columns=['Grade', 'Count'])
- st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
- st.table(grades_counts_df)
+  
  fig, ax = plt.subplots()  # Create a figure and axis object
  ax.bar(grades_counts_df['Grade'], grades_counts_df['Count'])
 
@@ -48,6 +47,8 @@ def grades_count():
 # Showing the plot in Streamlit
  st.write("Bar Chart:")
  st.pyplot(fig) 
+ st.write(f"Grades count for {selected_subject} in {selected_dept} department:")
+ st.table(grades_counts_df)
 
 def main():
     st.title("Subject Statistics")
