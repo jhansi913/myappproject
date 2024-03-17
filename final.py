@@ -60,7 +60,8 @@ def generate_table_data():
 def main():
  
  
-    st.title("Subject Statistics")
+    st.title("Department Pass/Fail Summary")
+    
     table_data1=total_list()
     st.dataframe(pd.DataFrame(table_data1))
     
