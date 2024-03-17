@@ -50,7 +50,7 @@ def generate_table_data():
   data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count,"passpercentage":passpercentage})
  
      
-return data
+ return data
  
 
 # Main function
