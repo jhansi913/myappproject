@@ -102,12 +102,12 @@ def generate_table_data():
 
 
 def main():
-    page = st.sidebar.radio("Navigation", ["generate_table_data","grades_count"])
+     
 
      
          
 
-    if page=="generate_table_data":
+    
         st.title("Result Statistics")
         st.subheader("Department Pass/Fail Summary")
         table_data1=total_list()
@@ -116,7 +116,7 @@ def main():
         table_data = generate_table_data()
         st.dataframe(pd.DataFrame(table_data))
 
-    elif page=="grades_count":
+    
         st.title("Subject Statistics")
         table_data = grades_count()
 
