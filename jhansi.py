@@ -101,7 +101,7 @@ def generate_table_data():
 def main():
     page = st.sidebar.radio("Navigation", ["welcomepage", "generate_table_data","grades_count"])
 
-    if page==welcomepage:
+    if page=="welcomepage":
        st.title("GVCEW RESULTS DASHBOARD")
        st.image("gvpcew.jpg")
          
