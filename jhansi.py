@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 st.title("GVCEW RESULTS DASHBOARD")
-st.image("gvpcew.jpg")
+st.image("          gvpcew.jpg")
 sem_list=['1-1','1-2']
 semester= st.selectbox("Select semester", sem_list, key="selectbox11")
 if semester=='1-1':
