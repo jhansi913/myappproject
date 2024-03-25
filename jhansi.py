@@ -5,6 +5,12 @@ import matplotlib.pyplot as plt
 st.title("GVCEW RESULTS DASHBOARD")
 # read the dataset
 sem_list=['1-1','1-2']
+semester= st.selectbox("Select semester", sem_list, key="selectbox11")
+selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+if semester=='1-1':
+  data = pd.read_excel('22-Res11.xlsx')
+if semester=='1-2':
+  data = pd.read_excel('22-Res12.xlsx')
  
  
  
@@ -34,12 +40,7 @@ def total_list():
  return table_data1
 
 def grades_count():
- semester= st.selectbox("Select semester", sem_list, key="selectbox11")
- selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
- if semester=='1-1':
-  data = pd.read_excel('22-Res11.xlsx')
- if semester=='1-2':
-  data = pd.read_excel('22-Res12.xlsx')
+ 
  subjects=df.columns[3:11]
  selected_subject = st.selectbox('Select a subject', subjects)
     
@@ -87,12 +88,6 @@ def count_failed(selected_dept):
 
 
 def generate_table_data():
- semester= st.selectbox("Select semester", sem_list, key="selectbox11")
- selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
- if semester=='1-1':
-  data = pd.read_excel('22-Res11.xlsx')
- if semester=='1-2':
-  data = pd.read_excel('22-Res12.xlsx')
  passed,failed=count_failed(selected_dept)
  sub_list=[]
  for i in range(3,11):
