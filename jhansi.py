@@ -37,6 +37,8 @@ def total_list():
  return table_data1
 
 def grades_count():
+ subjects=df.columns[3:11]
+ selected_subject = st.selectbox('Select a subject', subjects)
     
  grades_counts = {
                 'O': df[df[selected_subject] == 'O'].shape[0],
