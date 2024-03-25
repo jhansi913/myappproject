@@ -2,27 +2,26 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-st.title("GVCEW RESULTS DASHBOARD")
-# read the dataset
-sem_list=['1-1','1-2']
-semester= st.selectbox("Select semester", sem_list, key="selectbox11")
  
-if semester=='1-1':
-  data = pd.read_excel('22-Res11.xlsx')
-if semester=='1-2':
-  data = pd.read_excel('22-Res12.xlsx')
- 
- 
- 
-data.dropna(subset=['BRANCH'], inplace=True)
-dept_list=['CSE','IT','CSM','EEE','ECE']
-selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
-df=data[data["BRANCH"]==selected_dept]
-df=df.dropna(axis=1, how='all')
 def welcome_page():
-    st.title("Welcome to GVPCEW Dashboard")
+ st.title("GVCEW RESULTS DASHBOARD")
+ st.image("gvpcew.jpg")
+# read the dataset
+ sem_list=['1-1','1-2']
+ semester= st.selectbox("Select semester", sem_list, key="selectbox11")
+ 
+ if semester=='1-1':
+   data = pd.read_excel('22-Res11.xlsx')
+ if semester=='1-2':
+   data = pd.read_excel('22-Res12.xlsx')
+ data.dropna(subset=['BRANCH'], inplace=True)
+ dept_list=['CSE','IT','CSM','EEE','ECE']
+ selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+ df=data[data["BRANCH"]==selected_dept]
+ df=df.dropna(axis=1, how='all')
+ st.title("Welcome to GVPCEW Dashboard")
     
-    st.image("gvpcew.jpg")
+   
 
 def total_list():
  tpassed=df[(df['SGPA'] != 0) & (df['BRANCH'] == selected_dept)].shape[0]
