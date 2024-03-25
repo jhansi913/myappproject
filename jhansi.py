@@ -99,7 +99,7 @@ def generate_table_data():
 
 
 def main():
-    page = st.sidebar.radio("Navigation", ["welcome_page", "generate_table_data","grades_count"])
+    page = st.sidebar.radio("Navigation", ["welcomepage", "generate_table_data","grades_count"])
 
     if page==welcomepage:
        st.title("GVCEW RESULTS DASHBOARD")
