@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 st.title("GVCEW RESULTS DASHBOARD")
 # read the dataset
 sem_list=['1-1','1-2']
-semester= st.selectbox("Select semester", sem_list, key="selectbox11")
+ 
 if semester=='1-1':
  data = pd.read_excel('22-Res11.xlsx')
 if semester=='1-2':
@@ -13,7 +13,7 @@ if semester=='1-2':
  
 data.dropna(subset=['BRANCH'], inplace=True)
 dept_list=['CSE','IT','CSM','EEE','ECE']
-selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
+ 
 df=data[data["BRANCH"]==selected_dept]
 df=df.dropna(axis=1, how='all')
 def welcome_page():
@@ -37,6 +37,8 @@ def total_list():
  return table_data1
 
 def grades_count():
+ semester= st.selectbox("Select semester", sem_list, key="selectbox11")
+ selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
  subjects=df.columns[3:11]
  selected_subject = st.selectbox('Select a subject', subjects)
     
@@ -84,6 +86,8 @@ def count_failed(selected_dept):
 
 
 def generate_table_data():
+ semester= st.selectbox("Select semester", sem_list, key="selectbox11")
+ selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
  passed,failed=count_failed(selected_dept)
  sub_list=[]
  for i in range(3,11):
