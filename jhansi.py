@@ -19,7 +19,7 @@ df=df.dropna(axis=1, how='all')
 def welcome_page():
     st.title("Welcome to GVPCEW Dashboard")
     
-    st.image("machine.jpg")
+    st.image("gvpcew.jpg")
 
 def total_list():
  tpassed=df[(df['SGPA'] != 0) & (df['BRANCH'] == selected_dept)].shape[0]
