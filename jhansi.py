@@ -4,10 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 sem_list=['1-1','1-2']
 semester= st.selectbox("Select semester", sem_list, key="selectbox11")
- 
- if semester=='1-1':
+if semester=='1-1':
    data = pd.read_excel('22-Res11.xlsx')
- if semester=='1-2':
+if semester=='1-2':
   data = pd.read_excel('22-Res12.xlsx')
 data.dropna(subset=['BRANCH'], inplace=True)
 dept_list=['CSE','IT','CSM','EEE','ECE']
