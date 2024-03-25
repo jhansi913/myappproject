@@ -102,7 +102,7 @@ def generate_table_data():
 
 
 def main():
-    page = st.sidebar.radio("Navigation", ["welcomepage", "generate_table_data","grades_count"])
+    page = st.sidebar.radio("Navigation", ["generate_table_data","grades_count"])
 
      
          
