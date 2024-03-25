@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-st.image("gvpcew.jpg")
+st.image("fulllogo.jpg")
 st.title("GVCEW RESULTS DASHBOARD")
  
 sem_list=['1-1','1-2']
