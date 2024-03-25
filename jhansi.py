@@ -14,12 +14,10 @@ selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
 df=data[data["BRANCH"]==selected_dept]
 df=df.dropna(axis=1, how='all')
  
-def welcome_page():
- st.title("GVCEW RESULTS DASHBOARD")
- st.image("gvpcew.jpg")
-# read the dataset
+ 
   
- st.title("Welcome to GVPCEW Dashboard")
+ 
+ 
     
    
 
@@ -103,8 +101,10 @@ def generate_table_data():
 def main():
     page = st.sidebar.radio("Navigation", ["welcome_page", "generate_table_data","grades_count"])
 
-    if page==welcome_page:
-        welcome_page()
+    if page==welcomepage:
+       st.title("GVCEW RESULTS DASHBOARD")
+       st.image("gvpcew.jpg")
+         
 
     elif page=="generate_table_data":
         st.title("Result Statistics")
