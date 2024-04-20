@@ -92,7 +92,7 @@ def count_failed(selected_dept):
 def generate_table_data():
  passed,failed=count_failed(selected_dept)
  sub_list=[]
- for i in range(3,11):
+ for i in range(3,13):
   sub_list.append(df.columns[i])
  data = []
  for name, pass_count, fail_count in zip(sub_list, passed, failed):
