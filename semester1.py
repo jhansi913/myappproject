@@ -4,12 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 st.title("GVCEW RESULTS DASHBOARD")
 # read the dataset
-sem_list=['1-1','1-2']
+sem_list=['1-1','1-2','21']
 semester= st.selectbox("Select semester", sem_list, key="selectbox11")
 if semester=='1-1':
  data = pd.read_excel('22-Res11.xlsx')
 if semester=='1-2':
  data = pd.read_excel('22-Res12.xlsx')
+if semester=='21':
+ data=pd.read_excel('21RES.xlsx')
 
 dept_list=['CSE','IT','CSM','EEE','ECE']
 selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
