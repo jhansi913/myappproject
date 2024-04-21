@@ -18,6 +18,7 @@ dept_list=['CSE','IT','CSM','EEE','ECE']
 selected_dept = st.selectbox("Select Department", dept_list, key="selectbox1")
 df=data[data["BRANCH"]==selected_dept]
 df=df.dropna(axis=1, how='all')
+st.write(df.shape)
  
  
   
@@ -95,7 +96,7 @@ def generate_table_data():
  for i in range(3,13):
   sub_list.append(df.columns[i])
  data = []
- st.write(df.shape[1]-3)
+  
  for name, pass_count, fail_count in zip(sub_list, passed, failed):
   passpercentage=(pass_count/(pass_count+fail_count))*100;
   data.append({"Subject Name": name, "Passed": pass_count, "Failed": fail_count,"Pass%":passpercentage})
