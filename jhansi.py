@@ -84,7 +84,7 @@ def count_failed(selected_dept):
     passed=[]
     failed=[]
      
-    for i in range(3,13):
+    for i in range(3,df.shape[1]-3):
         passed.append(df[(df[df.columns[i]] != 'F')].shape[0])
         failed.append(df[(df[df.columns[i]] == 'F')].shape[0])
     return passed,failed
@@ -93,7 +93,7 @@ def count_failed(selected_dept):
 def generate_table_data():
  passed,failed=count_failed(selected_dept)
  sub_list=[]
- for i in range(3,13):
+ for i in range(3,df.shape[1]-3):
   sub_list.append(df.columns[i])
  data = []
   
