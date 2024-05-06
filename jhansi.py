@@ -44,7 +44,7 @@ def total_list():
 
 def grades_count():
  
- subjects=df.columns[3:13]
+ subjects=df.columns[3:df.shape[1]-3]
  selected_subject = st.selectbox('Select a subject', subjects)
     
  grades_counts = {
