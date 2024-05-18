@@ -108,11 +108,6 @@ def generate_table_data():
 
 
 def main():
-     
-
-     
-         
-
     
         st.title("Result Statistics")
         st.subheader("Department Pass/Fail Summary")
