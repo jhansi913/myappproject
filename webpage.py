@@ -1,12 +1,16 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
-def main():
-    st.title("Embedding HTML in Streamlit")
-    with open('home.html', 'r', encoding='utf-8') as html_file:
-        html_content = html_file.read()
-    st.markdown(html_content, unsafe_allow_html=True)
+# >>> import plotly.express as px
+# >>> fig = px.box(range(10))
+# >>> fig.write_html('test.html')
 
-    # Read the HTML files
+st.header("test html import")
+
+HtmlFile = open("home.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code)
     
 
      
