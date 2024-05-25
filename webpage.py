@@ -5,8 +5,9 @@ def main():
 
     # Read the HTML files
    with open('home.html', 'r', encoding='utf-8') as html_file:
-    html_content = html_file.read()
+       html_content = html_file.read()
 
+     
 # Display the HTML file in Streamlit
   st.markdown(html_content, unsafe_allow_html=True)
      
