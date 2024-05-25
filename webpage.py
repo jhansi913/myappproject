@@ -7,7 +7,7 @@ st.header("test html import")
 HtmlFile = open("home.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
  
-components.html(source_code)
+components.html(source_code, height=600, scrolling=True)
 
      
 # Display the HTML file in Streamlit
