@@ -4,7 +4,7 @@ def main():
     st.title("Embedding HTML in Streamlit")
 
     # Read the HTML files
-   with open('example.html', 'r', encoding='utf-8') as html_file:
+   with open('home.html', 'r', encoding='utf-8') as html_file:
     html_content = html_file.read()
 
 # Display the HTML file in Streamlit
